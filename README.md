@@ -113,6 +113,84 @@ For example, if 20 is input:
 Enter an integer N:20
 2 3 5 7 11 13 17 19
 ```
-Note that if the input number is not a positive integer, the programme will display "Invalid input! Please input a positive integer." and please refer to Question4 for the code for it.
+Note that if the input number is not a positive integer, the programme will display "Invalid input! Please input a positive integer." and please refer to Question4 for the code for it. For instance:
+```
+Enter an integer N:10.9
+Invalid input! Please input a positive integer.
+Enter an integer N:-4
+Invalid input! Please input a positive integer.
+Enter an integer N:
+```
 
 ###Question6
+This programme will approxiamte the value of integral of the trigonometric function (only sin, cos, or tan is available) input by the user above a certain interval [a, b] defined by the user. The core code is:
+```Python
+def integral(a, b, n):
+    sum = 0
+    for i in range(1, n+1):
+        area = ((b - a) / n) * func(a + ((b - a) / n) * (i - 1 / 2))
+        sum += area
+    return sum
+print(integral(a, b, n))
+```
+For example:
+```bash
+bash-3.2$ python3 /users/apple/q6.py
+Input the trigonometric function:cos
+Input the lower bound, a:0
+Input the upper bound, b:500
+Input the number of subintervals, n:100000
+-0.467772292585137
+```
+Note that an approach to check the input error is used for the function, a, b, and n:
+```
+while True:
+    tri = input("Input the trigonometric function:")
+    if tri == 'sin':
+        def func(x):
+            return sin(x)
+        break
+    elif tri == 'cos':
+        def func(x):
+            return cos(x)
+        break
+    elif tri == 'tan':
+        def func(x):
+            return tan(x)
+        break
+    else:
+        print("Please input one of 'sin' 'cos' 'tan'")
+
+while True:
+    A = input("Input the lower bound, a:")
+    B = input("Input the upper bound, b:")
+    if A <= B:
+        a, b = float(A), float(B)
+        break
+    else:
+        print("a <= b is required! Please input again")
+
+while True:
+    N = input("Input the number of subintervals, n:")
+    if N.isdigit() and int(N) > 0:
+        n = int(N)
+        break
+    else:
+        print("n should be a positive integer! Please input again")
+```
+If invalid data is input, the results are as shown:
+```bash
+bash-3.2$ python3 /users/apple/q6.py
+Input the trigonometric function:iii
+Please input one of 'sin' 'cos' 'tan'
+Input the trigonometric function:sin
+Input the lower bound, a:8
+Input the upper bound, b:2
+a <= b is required! Please input again
+Input the lower bound, a:2
+Input the upper bound, b:8
+Input the number of subintervals, n:1.9
+n should be a positive integer! Please input again
+Input the number of subintervals, n:100
+-0.2706874040220319
+```
