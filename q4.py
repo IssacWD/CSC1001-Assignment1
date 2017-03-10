@@ -1,5 +1,5 @@
 while True:
-    N = input('Enter an integer N:')
+    N = input('Enter an positive integer N:')
     if N.isdigit() and int(N) > 0:
         break
     else:
