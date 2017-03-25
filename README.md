@@ -2,7 +2,7 @@
 ## Author: WD
 ## Date: Mar.10, 2017
 This file is to introduce how the codes of Assignment 1 is running.
-###Question1
+### Question1
 This programme will request the user to three parameters in float or integer type: final value, annual interest rate, and number of years. Other types of input will raise ValueError. The core formula to calculate the initial value is:
 ```Python
 InitialValue = FinalValue / (1 + InterestRate/100) ** Years
@@ -17,7 +17,7 @@ Enter the number of years:5
 ```
 for sample values 1000, 4.25, and 5.
 
-###Question2
+### Question2
 This programme will request a positive integer from the user and display the numbers of each digits of that integer in reverse order. Other types of input will raise ValueError. The core code is:
 ```Python
 num = input('Enter an integer:')
@@ -34,7 +34,7 @@ Enter an integer:2718
 2
 ```
 
-###Question3
+### Question3
 This programme will request an integer m from the user and print the smallest number of n such that n^2 is larger than m. Other types of input will raise ValueError. The core code is:
 ```Python
 n = 0
@@ -48,7 +48,7 @@ Enter an integer:10
 4
 ```
 
-###Question4
+### Question4
 This programme allows the user to input a number N, and print a table with N rows and 3 columns. In the mth row, your program should output three numbers: m, m+1, and m^(m+1). The core code is:
 ```Python
 m = 1
@@ -86,7 +86,7 @@ Invalid input! Please input a positive integer.
 Enter an positive integer N:
 ```
 
-###Question5
+### Question5
 This programme allows the user to input an integer N, and print all the prime numbers which are smaller than N. The core code is:
 ```Python
 n, count= int(N), 1
@@ -122,7 +122,7 @@ Invalid input! Please input a positive integer.
 Enter an integer N:
 ```
 
-###Question6
+### Question6
 This programme will approxiamte the value of integral of the trigonometric function (only sin, cos, or tan is available) input by the user above a certain interval [a, b] defined by the user. The core code is:
 ```Python
 def integral(a, b, n):
